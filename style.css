@@ -1,0 +1,49 @@
+:root {
+  --index-screen: url("screens/index.png");
+  --border-width: 5px;
+  --border-color: cyan;
+  --screen-width: 100%;
+}
+
+#aboutButton {
+  top: calc(6 / 504 * var(--screen-width) - var(--border-width));
+  left: calc(886 / 960.5 * var(--screen-width) - var(--border-width));
+  width: calc(34.66 / 960.5 * var(--screen-width) - var(--border-width));
+  height: calc(20 / 504 * var(--screen-width) - var(--border-width));
+}
+
+#detailButton {
+  top: calc(130 / 504 * var(--screen-width) - var(--border-width));
+  left: calc(380.5 / 960.5 * var(--screen-width) - var(--border-width));
+  width: calc(158 / 960.5 * var(--screen-width) - var(--border-width));
+  height: calc(158 / 504 * var(--screen-width) - var(--border-width));
+}
+
+.screen {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+  z-index: 0;
+  background-image: var(--index-screen);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.clickBox {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  border: var(--border-width) solid var(--border-color);
+  z-index: 1;
+}
+.clickBox:hover {
+  background-color: var(--border-color);
+  opacity: 0.5;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #222;
+}
