@@ -1,27 +1,33 @@
 :root {
   --index-screen: url("screens/index.png");
+  --og-image-width: 960.5; /* in px, no unit notation*/
+  --og-image-height: 504; /* in px, no unit notation*/
+
   --border-width: 5px;
   --border-color: cyan;
   --screen-width: 100%;
+  --screen-height: calc(var(--og-image-height) / var(--og-image-width) * 100vw);
+  --height-ratio: calc(1 / var(--og-image-height) * var(--screen-height));
+  --width-ratio: calc(1 / var(--og-image-width) * var(--screen-width));
 }
 
 #aboutButton {
-  top: calc(6 / 504 * var(--screen-width) - var(--border-width));
-  left: calc(886 / 960.5 * var(--screen-width) - var(--border-width));
-  width: calc(34.66 / 960.5 * var(--screen-width) - var(--border-width));
-  height: calc(20 / 504 * var(--screen-width) - var(--border-width));
+  top: calc(6 * var(--height-ratio));
+  left: calc(886 * var(--width-ratio));
+  width: calc(34.66 * var(--width-ratio) - 2 * var(--border-width));
+  height: calc(20 * var(--height-ratio) - 2 * var(--border-width));
 }
 
 #detailButton {
-  top: calc(130 / 504 * var(--screen-width) - var(--border-width));
-  left: calc(380.5 / 960.5 * var(--screen-width) - var(--border-width));
-  width: calc(158 / 960.5 * var(--screen-width) - var(--border-width));
-  height: calc(158 / 504 * var(--screen-width) - var(--border-width));
+  top: calc(130 * var(--height-ratio));
+  left: calc(380.5 * var(--width-ratio));
+  width: calc(158 * var(--width-ratio) - 2 * var(--border-width));
+  height: calc(158 * var(--height-ratio) - 2 * var(--border-width));
 }
 
 .screen {
   position: absolute;
-  height: 100vh;
+  height: var(--screen-height);
   width: 100vw;
   margin: auto;
   z-index: 0;
