@@ -1,49 +1,73 @@
 :root {
-  --index-screen: url("screens/index.png");
+  /** EDIT these **/
   --og-image-width: 960.5; /* in px, no unit notation*/
   --og-image-height: 504; /* in px, no unit notation*/
-
   --border-width: 5px;
   --border-color: cyan;
+
+  /** DO NOT EDIT these **/
   --screen-width: 100%;
   --screen-height: calc(var(--og-image-height) / var(--og-image-width) * 100vw);
   --height-ratio: calc(1 / var(--og-image-height) * var(--screen-height));
   --width-ratio: calc(1 / var(--og-image-width) * var(--screen-width));
 }
 
-#aboutButton {
+/** REPLACE all of these page id's with your own pages**/
+
+#indexPage {
+  background-image: url("screens/index.png");
+}
+
+#detailPage{
+  background-image: url("screens/detail.png");
+}
+
+#aboutPage{
+  background-image: url("screens/about.png");
+}
+
+/** REPLACE all of these Hotspot id's with your own hotspots **/
+
+#aboutHotspot {
   top: calc(6 * var(--height-ratio));
   left: calc(886 * var(--width-ratio));
   width: calc(34.66 * var(--width-ratio) - 2 * var(--border-width));
   height: calc(20 * var(--height-ratio) - 2 * var(--border-width));
 }
 
-#detailButton {
+#detailHotspot {
   top: calc(130 * var(--height-ratio));
   left: calc(380.5 * var(--width-ratio));
   width: calc(158 * var(--width-ratio) - 2 * var(--border-width));
   height: calc(158 * var(--height-ratio) - 2 * var(--border-width));
 }
 
+#shopHotspot {
+  top: calc(6 * var(--height-ratio));
+  left: calc(851 * var(--width-ratio));
+  width: calc(29 * var(--width-ratio) - 2 * var(--border-width));
+  height: calc(20 * var(--height-ratio) - 2 * var(--border-width));
+}
+
+/* DO NOT EDIT THESE */
+
 .screen {
   position: absolute;
   height: var(--screen-height);
   width: 100vw;
   margin: auto;
-  z-index: 0;
-  background-image: var(--index-screen);
   background-repeat: no-repeat;
   background-size: 100% auto;
 }
 
-.clickBox {
+.hotspot {
   position: absolute;
   min-width: 10px;
   min-height: 10px;
   border: var(--border-width) solid var(--border-color);
   z-index: 1;
 }
-.clickBox:hover {
+.hotspot:hover {
   background-color: var(--border-color);
   opacity: 0.5;
 }

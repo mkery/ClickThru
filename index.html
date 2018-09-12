@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Prototype</title>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Prototype</title>
   <link rel="stylesheet" href="style.css" type="text/css">
-  </head>
-  <body>
-    <div class="screen">
-      <div class="clickBox" id="aboutButton"></div>
-      <div class="clickBox" id="detailButton"></div>
-    </div>
-  </body>
+  <script type="text/javascript" src="clickthu.js"></script>
+</head>
+
+<body>
+
+  <div class="screen" id="indexPage">
+    <div class="hotspot" id="shopHotspot" dest="indexPage"></div>
+    <div class="hotspot" id="aboutHotspot" dest="aboutPage"></div>
+    <div class="hotspot" id="detailHotspot" dest="detailPage"></div>
+  </div>
+
+  <div class="screen" id="aboutPage" style="display: none">
+    <div class="hotspot" id="aboutHotspot" dest="aboutPage"></div>
+    <div class="hotspot" id="shopHotspot" dest="indexPage"></div>
+  </div>
+
+  <div class="screen" id="detailPage" style="display: none">
+    <div class="hotspot" id="aboutHotspot" dest="aboutPage"></div>
+    <div class="hotspot" id="shopHotspot" dest="indexPage"></div>
+  </div>
+
+  <script type="text/javascript">
+    // code executes immediately after the page loads
+    loadEventListeners();
+  </script>
+</body>
+
 </html>
